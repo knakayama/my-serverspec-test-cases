@@ -17,7 +17,7 @@ describe file("/etc/my.cnf") do
     it { should be_file }
     it { should be_owned_by "root" }
     it { should be_grouped_into "root" }
-    it { should be_mod 644 }
+    it { should be_mode 644 }
     its(:content) { should match /character-set-server=utf8/ }
     its(:content) { should match /skip-character-set-client-handshake/ }
     its(:content) { should match /innodb_file_per_table/ }
