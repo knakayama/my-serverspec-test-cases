@@ -23,7 +23,7 @@ describe file("/etc/zabbix/zabbix_server.conf") do
     it { should be_mode 540 }
 end
 
-describe command("mysql -uroot -e 'show databases' | grep zabbix") do
+describe command("mysql -uroot -e 'show databases' | grep zabbix@localhost") do
     it { should return_stdout 'zabbix' }
 end
 
