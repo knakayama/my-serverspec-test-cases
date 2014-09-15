@@ -8,7 +8,7 @@ describe service("zabbix-server") do
     it { should be_enabled }
 end
 
-describe server("zabbix_server") do
+describe service("zabbix_server") do
     it { should be_running }
 end
 
