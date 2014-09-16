@@ -13,11 +13,11 @@ describe port(10050) do
     it { should be_listening.with('tcp') }
 end
 
-describe file('/etc/zabbix/zabbix_agend.conf') do
+describe file('/etc/zabbix/zabbix_agentd.conf') do
     it { should be_file }
-    it { should be_owned_by root }
-    it { should be_grouped_into root }
+    it { should be_owned_by 'root' }
+    it { should be_grouped_into 'root' }
     it { should be_mode 644 }
-    its(:content) { should match /127\.0\.0\.1|172\.31\.21\.235/ }
+    its(:content) { should match /^Server=(127\.0\.0\.1|172\.31\.21\.235)$/ }
 end
 
