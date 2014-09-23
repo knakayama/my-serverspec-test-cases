@@ -23,11 +23,11 @@ describe file("/etc/zabbix/zabbix_server.conf") do
     it { should be_mode 540 }
 end
 
-describe command("mysql -uroot -e 'show databases' | grep zabbix@localhost") do
+describe command("mysql -uroot -e 'show databases' | grep zabbix") do
     it { should return_stdout 'zabbix' }
 end
 
-describe command("mysql -uroot -e 'show grants for zabbix'") do
+describe command("mysql -uroot -e 'show grants for zabbix@localhost'") do
     it { should return_exit_status 0 }
 end
 

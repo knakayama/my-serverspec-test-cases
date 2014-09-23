@@ -1,3 +1,3 @@
-my serverspec specs
-===================
+my serverspec test cases
+========================
 

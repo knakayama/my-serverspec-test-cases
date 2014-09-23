@@ -21,8 +21,8 @@ describe file("/etc/my.cnf") do
     its(:content) { should match /character-set-server=utf8/ }
     its(:content) { should match /skip-character-set-client-handshake/ }
     its(:content) { should match /innodb_file_per_table/ }
-    its(:content) { should match /innodb_buffer_pool_size=64M/ }
-    its(:content) { should match /innodb_log_file_size=16M/ }
+    its(:content) { should match /innodb_buffer_pool_size=\d+M/ }
+    its(:content) { should match /innodb_log_file_size=\d+M/ }
     its(:content) { should match /innodb_log_files_in_group=2/ }
 end
 
